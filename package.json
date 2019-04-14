@@ -1,15 +1,19 @@
 {
-  "name": "fire-select",
+  "name": "react-awesome-selector",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.3.1",
+    "faker": "^4.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-popover": "^0.5.10",
     "react-scripts": "2.1.8"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "generateData": "node ./src/scripts/generateFakeData.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
