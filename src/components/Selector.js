@@ -1,5 +1,4 @@
 import React from "react";
-import Popover from "react-popover";
 import { SelectedProvider, SelectedContext } from "./SelectedContext";
 import DataList from "./DataList";
 import SelectedList from "./SelectedList";
@@ -59,25 +58,7 @@ class Selector extends React.Component {
     return (
       <SelectedProvider>
         <SelectedContext.Consumer>
-          {context => (
-            <Popover
-              body={mainComponent}
-              isOpen={this.state.display}
-              preferPlace="below"
-              onOuterAction={() => {
-                context.resetSelected();
-                this.setState({ display: false });
-              }}
-            >
-              <button
-                className="btn btn-primary"
-                style={{ margin: 20 }}
-                onClick={this.onClick}
-              >
-                {this.props.children}
-              </button>
-            </Popover>
-          )}
+          {context => mainComponent}
         </SelectedContext.Consumer>
       </SelectedProvider>
     );

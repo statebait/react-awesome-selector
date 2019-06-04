@@ -1,17 +1,17 @@
-import React from "react";
-import { SelectedContext } from "./SelectedContext";
-import "./style.css";
+import React from 'react'
+import { SelectedContext } from './SelectedContext'
+import './style.css'
 
 function Category(props) {
-  const [list, setList] = React.useState("");
-  const [arrowClass, setArrowClass] = React.useState("");
+  const [list, setList] = React.useState('')
+  const [arrowClass, setArrowClass] = React.useState('')
 
   function handleDropdown() {
     if (list) {
-      setArrowClass("");
-      return setList("");
+      setArrowClass('')
+      return setList('')
     } else {
-      setArrowClass("rotate");
+      setArrowClass('rotate')
       return setList(
         <SelectedContext.Consumer>
           {context => (
@@ -21,33 +21,33 @@ function Category(props) {
                   <li key={item.name} className="list-group-item">
                     {item.name}
                     <button
-                      style={{ float: "right" }}
+                      style={{ float: 'right' }}
                       className="btn btn-primary"
                       onClick={e => {
-                        onClickItem(e, item, context.addSelected);
+                        onClickItem(e, item, context.addSelected)
                       }}
                     >
                       Add
                     </button>
                   </li>
-                );
+                )
               })}
             </ul>
           )}
         </SelectedContext.Consumer>
-      );
+      )
     }
   }
 
   function onClickItem(e, item, addSelected) {
-    addSelected(item);
+    addSelected(item)
   }
 
   const onClickCategory = async (e, set, addSelected) => {
     for (let i = 0; i < set.length; i++) {
-      await addSelected(set[i]);
+      await addSelected(set[i])
     }
-  };
+  }
 
   return (
     <SelectedContext.Consumer>
@@ -59,12 +59,12 @@ function Category(props) {
               onClick={handleDropdown}
               className={arrowClass}
               style={{ marginRight: 10, height: 15, width: 15 }}
-              src={require("../assets/icons/angle-right.svg")}
+              src={require('../assets/icons/angle-right.svg')}
             />
             {props.category}
 
             <button
-              style={{ float: "right" }}
+              style={{ float: 'right' }}
               className="btn btn-primary"
               onClick={e =>
                 onClickCategory(e, props.dataset, context.addSelected)
@@ -77,7 +77,7 @@ function Category(props) {
         </div>
       )}
     </SelectedContext.Consumer>
-  );
+  )
 }
 
-export default Category;
+export default Category

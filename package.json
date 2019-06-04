@@ -1,29 +1,33 @@
 {
   "name": "react-awesome-selector",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
-  "dependencies": {
+  "scripts": {
+    "build": "webpack",
+    "generateData": "node ./src/scripts/generateFakeData.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
     "bootstrap": "^4.3.1",
     "faker": "^4.1.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-popover": "^0.5.10",
-    "react-scripts": "2.1.8"
+    "react-dom": "^16.8.6"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "generateData": "node ./src/scripts/generateFakeData.js",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^2.1.1",
+    "path": "^0.12.7",
+    "react-svg-loader": "^3.0.3",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  }
 }

@@ -21,4 +21,4 @@ function generateFakeData(categories, itemsPerCategory) {
   fs.writeFileSync("./src/assets/data/fakeData.json", JSON.stringify(final));
 }
 
-generateFakeData(10, 10);
+generateFakeData(1, 1);
