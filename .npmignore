@@ -1,4 +1,7 @@
-src
-demo
+.storybook
+scripts
+stories
 .babelrc
+.eslintrc.json
+.prettierrc
 webpack.config.js

@@ -1,0 +1,92 @@
+// Main wrapper
+
+.react-awesome-selector-wrapper {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Category
+
+.react-awesome-selector-category {
+  width: 300px;
+  padding: 5px;
+  margin: 5px;
+  -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.react-awesome-selector-category-title {
+  font-size: 22px;
+}
+
+.react-awesome-selector-category-icon {
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 8px;
+  height: auto;
+}
+
+.react-awesome-selector-category-children {
+  margin-left: 7%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+// Selected list
+
+.react-awesome-selector-selected-list {
+  width: 300px;
+  padding: 15px;
+  margin: 5px;
+  -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.react-awesome-selector-selected-list-title {
+  font-size: 22px;
+}
+
+// Item
+
+.react-awesome-selector-item {
+  font-size: 18px;
+  padding: 5px;
+  img {
+    margin-right: 20px;
+    float: right;
+    width: 12px;
+    height: auto;
+  }
+}
+
+// Button
+
+.react-awesome-selector-submit-button {
+  padding: 10px;
+  font-weight: bold;
+  width: 80px;
+  color: white;
+  margin-top: 15px;
+  background-color: black;
+  border: 0;
+  border-radius: 25px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+  &:hover {
+    color: black;
+    background-color: white;
+  }
+}
+
+// Rotation class
+
+.rotate {
+  transform: rotate(90deg);
+}

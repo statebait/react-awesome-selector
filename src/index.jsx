@@ -1,9 +1,9 @@
 import React from 'react'
-import { DataProvider, DataContext } from './DataContext'
-import SelectList from './SelectList'
-import SelectedList from './SelectedList'
+import { DataProvider, DataContext } from './DataContext.jsx'
+import SelectList from './SelectList.jsx'
+import SelectedList from './SelectedList.jsx'
 import PropTypes from 'prop-types'
-import './style.css'
+import './style.scss'
 
 class SelectorChild extends React.Component {
   state = {
@@ -50,17 +50,11 @@ class SelectorChild extends React.Component {
             />
           </div>
           <div>
-            <SelectedList items={this.props.context.selectedList} />
+            <SelectedList
+              title={this.props.selectedTitle}
+              items={this.props.context.selectedList}
+            />
           </div>
-        </div>
-        <div>
-          <button
-            onClick={() => {
-              console.log(this.props.context.selectedList)
-            }}
-          >
-            Submit
-          </button>
         </div>
       </div>
     )
@@ -71,7 +65,23 @@ function Selector(props) {
   return (
     <DataProvider>
       <DataContext.Consumer>
-        {context => <SelectorChild context={context} data={props.data} />}
+        {context => (
+          <div className="react-awesome-selector-wrapper">
+            <SelectorChild
+              selectedTitle={props.selectedTitle}
+              context={context}
+              data={props.data}
+            />
+            <button
+              className="react-awesome-selector-submit-button"
+              onClick={() => {
+                props.getSelected(context.selectedList)
+              }}
+            >
+              Submit
+            </button>
+          </div>
+        )}
       </DataContext.Consumer>
     </DataProvider>
   )
@@ -79,10 +89,16 @@ function Selector(props) {
 
 Selector.propTypes = {
   data: PropTypes.array,
+  selectedTitle: PropTypes.string,
+  ejectValues: PropTypes.func,
 }
 
 Selector.defaultProps = {
   data: [],
+  selectedTitle: 'Selected',
+  getSelected: function(values) {
+    console.log('Selected Values: ', values)
+  },
 }
 
 export default Selector

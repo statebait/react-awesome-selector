@@ -1,5 +1,6 @@
 import React from 'react'
-import { DataContext } from './DataContext'
+import { DataContext } from './DataContext.jsx'
+import Item from './Item.jsx'
 
 class SelectedList extends React.Component {
   state = {
@@ -16,23 +17,20 @@ class SelectedList extends React.Component {
     return (
       <DataContext.Consumer>
         {context => (
-          <div style={{ width: 300 }}>
+          <div className="react-awesome-selector-selected-list">
+            <span className="react-awesome-selector-selected-list-title">
+              {this.props.title}
+            </span>
             {this.state.items.map(item => {
               return (
-                <div>
+                <Item
+                  selected
+                  onIconClick={() => {
+                    context.removeSelected(item)
+                  }}
+                >
                   {item.name}
-                  <span
-                    onClick={() => {
-                      return context.removeSelected(item)
-                    }}
-                  >
-                    <img
-                      src={require('./assets/icons/times.svg')}
-                      className="accordion-icon"
-                      alt="none"
-                    />
-                  </span>
-                </div>
+                </Item>
               )
             })}
           </div>

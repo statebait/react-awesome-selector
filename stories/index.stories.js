@@ -3,6 +3,6 @@ import { storiesOf } from '@storybook/react'
 import Selector from '../src'
 import { data } from './fakeData.json'
 
-storiesOf('Selector', module).add('Example', () => (
-  <Selector data={data}>Trigger</Selector>
+storiesOf('Selector', module).add('With only data', () => (
+  <Selector data={data} />
 ))
