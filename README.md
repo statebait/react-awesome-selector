@@ -4,6 +4,8 @@
 
 A selector component built with ReactJS.
 
+## [Examples (Storybook)](https://shadxx7.github.io/react-awesome-selector)
+
 ## Getting started
 
 To install:
