@@ -2,6 +2,7 @@
   "name": "react-awesome-selector",
   "version": "0.1.0",
   "description": "A selector component built with ReactJS.",
+  "main": "dist/Selector.js",
   "author": {
     "name": "Mohamed Shadab",
     "url": "https://shadxx7.github.io"
@@ -13,10 +14,12 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
+    "prepublishOnly": "yarn build",
+    "lint": "eslint ./src/*.jsx",
     "release": "standard-version",
-    "generate": "node ./scripts/generateFakeData.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
@@ -28,27 +31,42 @@
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-console": "^1.1.0",
     "@storybook/addon-links": "^5.0.11",
+    "@storybook/addon-storysource": "^5.1.9",
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
+    "@storybook/storybook-deployer": "^2.8.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.6",
+    "commitlint": "^8.0.0",
     "css-loader": "^3.0.0",
-    "eslint": "5.x",
+    "eslint": "5.16.0",
     "eslint-config-react-app": "^4.0.1",
-    "eslint-plugin-import": "2.x",
+    "eslint-plugin-flowtype": "^3.11.1",
+    "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "6.x",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "^1.6.0",
-    "faker": "^4.1.0",
-    "jest": "^24.8.0",
+    "husky": "^2.4.1",
+    "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
     "path": "^0.12.7",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
     "sass-loader": "^7.1.0",
     "standard-version": "^6.0.1",
+    "storybook-addon-react-docgen": "^1.2.2",
     "svg-inline-loader": "^0.8.0",
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }

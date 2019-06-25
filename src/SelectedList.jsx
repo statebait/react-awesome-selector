@@ -24,6 +24,7 @@ class SelectedList extends React.Component {
             {this.state.items.map(item => {
               return (
                 <Item
+                  key={item.key}
                   selected
                   onIconClick={() => {
                     context.removeSelected(item)

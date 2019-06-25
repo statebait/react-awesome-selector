@@ -5,7 +5,7 @@ class Accordion extends React.Component {
   render() {
     const { title, children } = this.props
     const { isOpen } = this.state
-    const rotate = isOpen ? 'rotate' : ''
+    const rotate = isOpen ? { transform: 'rotate(90deg)' } : {}
     return (
       <div className="react-awesome-selector-category">
         <div>
@@ -19,7 +19,13 @@ class Accordion extends React.Component {
             <img
               src={require('./assets/icons/angle-right.svg')}
               alt="none"
-              className={`react-awesome-selector-category-icon ${rotate}`}
+              style={{
+                marginRight: '5%',
+                marginLeft: '5%',
+                width: '0.5rem',
+                height: 'auto',
+                ...rotate,
+              }}
             />
           </span>
           <span className="react-awesome-selector-category-title">{title}</span>

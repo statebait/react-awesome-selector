@@ -88,9 +88,18 @@ function Selector(props) {
 }
 
 Selector.propTypes = {
+  /**
+   * Data input for the selector
+   */
   data: PropTypes.array,
+  /**
+   * Title for the selected list
+   */
   selectedTitle: PropTypes.string,
-  ejectValues: PropTypes.func,
+  /**
+   * Function for getting the values of the selected values
+   */
+  getSelected: PropTypes.func,
 }
 
 Selector.defaultProps = {

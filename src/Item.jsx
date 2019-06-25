@@ -6,19 +6,31 @@ function Item(props) {
       {props.children}
       {props.selected ? (
         <img
+          alt="none"
           onClick={() => {
             props.onIconClick()
           }}
           src={require('./assets/icons/times.svg')}
-          className="react-awesome-selector-item-icon"
+          style={{
+            marginRight: '5%',
+            marginLeft: '5%',
+            width: '0.5rem',
+            height: 'auto',
+          }}
         />
       ) : (
         <img
+          alt="none"
           onClick={() => {
             props.onIconClick()
           }}
           src={require('./assets/icons/plus-solid.svg')}
-          className="react-awesome-selector-item-icon"
+          style={{
+            marginRight: '5%',
+            marginLeft: '5%',
+            width: '0.5rem',
+            height: 'auto',
+          }}
         />
       )}
     </div>

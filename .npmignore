@@ -1,5 +1,6 @@
 .storybook
 scripts
+src
 stories
 .babelrc
 .eslintrc.json

@@ -78,6 +78,3 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
-
-# Final distribution
-dist/
