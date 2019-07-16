@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/shadxx7/react-awesome-selector/compare/v0.1.2...v0.1.3) (2019-07-16)
+
+### Bug Fixes
+
+- 🐛 updated lodash to fix vulnerabilities ([636f76b](https://github.com/shadxx7/react-awesome-selector/commit/636f76b))
+
 ### [0.1.2](https://github.com/shadxx7/react-awesome-selector/compare/v0.1.1...v0.1.2) (2019-07-11)
 
 ### Bug Fixes
