@@ -5,11 +5,11 @@
   "main": "dist/Selector.js",
   "author": {
     "name": "Mohamed Shadab",
-    "url": "https://shadxx7.github.io"
+    "url": "https://statebait.github.io"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shadxx7/react-awesome-selector"
+    "url": "https://github.com/statebait/react-awesome-selector"
   },
   "license": "MIT",
   "scripts": {

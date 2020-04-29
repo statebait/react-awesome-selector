@@ -1,5 +1,6 @@
 # React Awesome Selector
 
+[![npm version](https://badge.fury.io/js/react-awesome-selector.svg)](https://badge.fury.io/js/react-awesome-selector)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 
 A selector component built with ReactJS.
@@ -39,7 +40,7 @@ export default function Main() {
     <Selector
       data={data}
       selectedTitle="Cart"
-      getSelected={values => alert(JSON.stringify(values))}
+      getSelected={(values) => alert(JSON.stringify(values))}
     />
   )
 }
@@ -66,7 +67,7 @@ Selector.propTypes = {
 Selector.defaultProps = {
   data: [],
   selectedTitle: 'Selected',
-  getSelected: function(values) {
+  getSelected: function (values) {
     console.log('Selected Values: ', values)
   },
 }
@@ -74,4 +75,4 @@ Selector.defaultProps = {
 
 ## License
 
-This project is licensed under the MIT License - Copyright (c) 2019 Mohamed Shadab
+This project is licensed under the MIT License - Copyright (c) 2020 Mohamed Shadab
