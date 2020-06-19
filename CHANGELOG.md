@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/statebait/react-awesome-selector/compare/v0.1.4...v0.1.5) (2020-06-19)
+
 ### [0.1.4](https://github.com/shadxx7/react-awesome-selector/compare/v0.1.3...v0.1.4) (2020-04-29)
 
 ### Bug Fixes
