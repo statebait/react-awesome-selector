@@ -1,45 +1,32 @@
 import React from 'react'
 
-class Accordion extends React.Component {
-  state = { isOpen: false }
-  render() {
-    const { title, children } = this.props
-    const { isOpen } = this.state
-    const rotate = isOpen ? { transform: 'rotate(90deg)' } : {}
-    return (
-      <div className="react-awesome-selector-category">
-        <div>
-          <span
-            onClick={() => {
-              this.setState({
-                isOpen: !isOpen,
-              })
-            }}
-          >
-            <img
-              src={require('./assets/icons/angle-right.svg')}
-              alt="none"
-              style={{
-                marginRight: '5%',
-                marginLeft: '5%',
-                width: '0.5rem',
-                height: 'auto',
-                ...rotate,
-              }}
-            />
-          </span>
-          <span className="react-awesome-selector-category-title">{title}</span>
-        </div>
-        {this.state.isOpen ? (
-          <div className="react-awesome-selector-category-children">
-            {children}
-          </div>
-        ) : (
-          <React.Fragment />
-        )}
+const Category = (props) => {
+  const [open, setOpen] = React.useState(false)
+  const { title, children } = props
+
+  const handleOpen = () => setOpen((c) => !c)
+
+  return (
+    <div className="react-awesome-selector-category">
+      <div>
+        <span onClick={handleOpen}>
+          <img
+            src={require('./assets/icons/angle-right.svg')}
+            alt="none"
+            className={`react-awesome-selector-category-icon ${
+              open ? 'rotate' : ''
+            }`}
+          />
+        </span>
+        <span className="react-awesome-selector-category-title">{title}</span>
       </div>
-    )
-  }
+      {open && (
+        <div className="react-awesome-selector-category-children">
+          {children}
+        </div>
+      )}
+    </div>
+  )
 }
 
-export default Accordion
+export default Category

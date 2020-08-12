@@ -5,23 +5,18 @@ import SelectedList from './SelectedList.jsx'
 import PropTypes from 'prop-types'
 import './style.scss'
 
-class SelectorChild extends React.Component {
-  state = {
-    items: [],
-    categories: [],
-  }
+const SelectorChild = (props) => {
+  const [state, setState] = React.useState({ items: [], categories: [] })
+  const { initList, ...context } = React.useContext(DataContext)
 
-  componentDidMount() {
-    this.sanitizeData()
-  }
-
-  sanitizeData = () => {
-    let items = this.props.data
+  // Sanitizes data
+  React.useEffect(() => {
+    let items = props.data
     let tempCategories = []
     let categories = []
     let m = 0
     let n = 0
-    items.map(item => {
+    items.map((item) => {
       if (!tempCategories.includes(item.category)) {
         tempCategories.push(item.category)
         categories.push({
@@ -33,56 +28,42 @@ class SelectorChild extends React.Component {
       item.key = n
       return n++
     })
-    this.setState({ items, categories }, () => {
-      this.props.context.initialPopulate(this.state.items)
-    })
-  }
+    setState({ items, categories })
+    initList(items)
+  }, [props.data, initList])
 
-  render() {
-    const { categories } = this.state
-    return (
-      <div>
-        <div style={{ display: 'flex' }}>
-          <div>
-            <SelectList
-              items={this.props.context.selectList}
-              categories={categories}
-            />
-          </div>
-          <div>
-            <SelectedList
-              title={this.props.selectedTitle}
-              items={this.props.context.selectedList}
-            />
-          </div>
-        </div>
+  const handleSubmit = () => props.getSelected(context.selectedList)
+
+  const { categories } = state
+  return (
+    <>
+      <div className="flex">
+        <SelectList items={context.selectList} categories={categories} />
+        <SelectedList
+          title={props.selectedTitle}
+          items={context.selectedList}
+        />
       </div>
-    )
-  }
+      <button
+        className="react-awesome-selector-submit-button"
+        onClick={handleSubmit}
+      >
+        Submit
+      </button>
+    </>
+  )
 }
 
 function Selector(props) {
   return (
     <DataProvider>
-      <DataContext.Consumer>
-        {context => (
-          <div className="react-awesome-selector-wrapper">
-            <SelectorChild
-              selectedTitle={props.selectedTitle}
-              context={context}
-              data={props.data}
-            />
-            <button
-              className="react-awesome-selector-submit-button"
-              onClick={() => {
-                props.getSelected(context.selectedList)
-              }}
-            >
-              Submit
-            </button>
-          </div>
-        )}
-      </DataContext.Consumer>
+      <div className="react-awesome-selector-wrapper">
+        <SelectorChild
+          selectedTitle={props.selectedTitle}
+          data={props.data}
+          getSelected={props.getSelected}
+        />
+      </div>
     </DataProvider>
   )
 }
@@ -105,7 +86,7 @@ Selector.propTypes = {
 Selector.defaultProps = {
   data: [],
   selectedTitle: 'Selected',
-  getSelected: function(values) {
+  getSelected: function (values) {
     console.log('Selected Values: ', values)
   },
 }

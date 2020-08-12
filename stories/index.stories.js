@@ -1,6 +1,11 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import Selector from '../src'
+import './utils/wdyr'
+
+export default {
+  title: 'Selector',
+  component: Selector,
+}
 
 const data = [
   { category: 'calculate', name: 'card', value: 89519 },
@@ -19,12 +24,15 @@ const data = [
   { category: 'Home Loan Account', name: 'HTTP', value: 74444 },
 ]
 
-storiesOf('Selector', module)
-  .add('With data only', () => <Selector data={data} />)
-  .add('With custom title', () => <Selector data={data} selectedTitle="Cart" />)
-  .add('Custom getSelected function', () => (
-    <Selector
-      data={data}
-      getSelected={values => alert(JSON.stringify(values))}
-    />
-  ))
+export const WithDataOnly = () => <Selector data={data} />
+
+export const WithCustomTitle = () => (
+  <Selector data={data} selectedTitle="Cart" />
+)
+
+export const WithCustomGetSelectedFunction = () => (
+  <Selector
+    data={data}
+    getSelected={(values) => alert(JSON.stringify(values))}
+  />
+)
