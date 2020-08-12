@@ -1,6 +1,6 @@
 {
   "name": "react-awesome-selector",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "A selector component built with ReactJS.",
   "main": "dist/Selector.js",
   "author": {
