@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/statebait/react-awesome-selector/compare/v0.1.5...v0.2.1) (2020-08-13)
+
+### Refactor
+
+- additional cleanup ([57cfaf5](https://github.com/statebait/react-awesome-selector/commit/57cfaf5b35a7f8e854160d84bf076cb56bafdfd3))
+
 ## [0.2.0](https://github.com/statebait/react-awesome-selector/compare/v0.1.5...v0.2.0) (2020-08-12)
 
 ### Refactor
