@@ -1,3 +1,20 @@
+// Utility classes
+
+.react-awesome-selector-rotate {
+  transform: rotate(90deg);
+}
+
+.react-awesome-selector-flex {
+  display: flex;
+}
+
+.react-awesome-selector-icon {
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 0.5rem;
+  height: auto;
+}
+
 // Main wrapper
 
 .react-awesome-selector-wrapper {
@@ -19,15 +36,14 @@
   box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
 }
 
-.react-awesome-selector-category-icon {
-  margin-right: 5%;
-  margin-left: 5%;
-  width: 0.5rem;
-  height: auto;
-}
-
 .react-awesome-selector-category-title {
-  font-size: 22px;
+  cursor: pointer;
+  img {
+    @extend .react-awesome-selector-icon;
+  }
+  span {
+    font-size: 22px;
+  }
 }
 
 .react-awesome-selector-category-children {
@@ -59,10 +75,8 @@
 }
 
 .react-awesome-selector-item-icon {
-  margin-right: 5%;
-  margin-left: 5%;
-  width: 0.5rem;
-  height: auto;
+  @extend .react-awesome-selector-icon;
+  cursor: pointer;
 }
 
 // Button
@@ -84,14 +98,4 @@
     color: black;
     background-color: white;
   }
-}
-
-// Utility classes
-
-.rotate {
-  transform: rotate(90deg);
-}
-
-.flex {
-  display: flex;
 }

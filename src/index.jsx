@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import './style.scss'
 
 const SelectorChild = (props) => {
-  const [state, setState] = React.useState({ items: [], categories: [] })
+  const [state, setState] = React.useState({ categories: [] })
   const { initList, ...context } = React.useContext(DataContext)
 
   // Sanitizes data
@@ -28,7 +28,7 @@ const SelectorChild = (props) => {
       item.key = n
       return n++
     })
-    setState({ items, categories })
+    setState({ categories })
     initList(items)
   }, [props.data, initList])
 
@@ -37,7 +37,7 @@ const SelectorChild = (props) => {
   const { categories } = state
   return (
     <>
-      <div className="flex">
+      <div className="react-awesome-selector-flex">
         <SelectList items={context.selectList} categories={categories} />
         <SelectedList
           title={props.selectedTitle}

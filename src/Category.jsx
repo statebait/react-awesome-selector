@@ -8,17 +8,16 @@ const Category = (props) => {
 
   return (
     <div className="react-awesome-selector-category">
-      <div>
-        <span onClick={handleOpen}>
-          <img
-            src={require('./assets/icons/angle-right.svg')}
-            alt="none"
-            className={`react-awesome-selector-category-icon ${
-              open ? 'rotate' : ''
-            }`}
-          />
-        </span>
-        <span className="react-awesome-selector-category-title">{title}</span>
+      <div
+        className="react-awesome-selector-category-title"
+        onClick={handleOpen}
+      >
+        <img
+          src={require('./assets/icons/angle-right.svg')}
+          alt="none"
+          className={open ? 'react-awesome-selector-rotate' : ''}
+        />
+        <span>{title}</span>
       </div>
       {open && (
         <div className="react-awesome-selector-category-children">
