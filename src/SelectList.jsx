@@ -3,35 +3,37 @@ import Category from './Category.jsx'
 import Item from './Item.jsx'
 import { DataContext } from './DataContext.jsx'
 
-function SelectList(props) {
+function SelectList() {
   return (
     <DataContext.Consumer>
-      {(context) => (
-        <div>
-          {props.categories.map((category) => {
-            return (
-              <Category key={category.key} title={category.name}>
-                {props.items.map((item) => {
-                  if (category.name === item.category) {
-                    return (
-                      <Item
-                        key={item.key}
-                        onIconClick={() => {
-                          context.addSelected(item)
-                        }}
-                      >
-                        {item.name}
-                      </Item>
-                    )
-                  } else {
-                    return null
-                  }
-                })}
-              </Category>
-            )
-          })}
-        </div>
-      )}
+      {(context) => {
+        return (
+          <div>
+            {context.categories.map((category, categoryIndex) => {
+              return (
+                <Category key={categoryIndex} title={category}>
+                  {context.selectList.map((item) => {
+                    if (category === item.category) {
+                      return (
+                        <Item
+                          key={item.key}
+                          onIconClick={() => {
+                            context.addSelected(item)
+                          }}
+                        >
+                          {item.name}
+                        </Item>
+                      )
+                    } else {
+                      return null
+                    }
+                  })}
+                </Category>
+              )
+            })}
+          </div>
+        )
+      }}
     </DataContext.Consumer>
   )
 }

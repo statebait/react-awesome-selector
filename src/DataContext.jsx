@@ -6,39 +6,46 @@ export const DataProvider = (props) => {
   const [state, setState] = React.useState({
     selectList: [],
     selectedList: [],
+    categories: [],
   })
 
-  const { selectList, selectedList } = state
+  const { selectList, selectedList, categories } = state
 
-  const initList = React.useCallback((data) => {
+  const initialize = React.useCallback((data) => {
     return setState((prevState) => ({
       ...prevState,
-      selectList: data,
+      selectList: data.selectList,
+      categories: data.categories,
+    }))
+  }, [])
+
+  const addSelected = React.useCallback((item) => {
+    return setState((prevState) => ({
+      ...prevState,
+      selectList: prevState.selectList.filter(
+        (selectItem) => selectItem.key !== item.key
+      ),
+      selectedList: [...prevState.selectedList, item],
+    }))
+  }, [])
+
+  const removeSelected = React.useCallback((item) => {
+    return setState((prevState) => ({
+      ...prevState,
+      selectList: [...prevState.selectList, item],
+      selectedList: prevState.selectedList.filter(
+        (selectedItem) => selectedItem.key !== item.key
+      ),
     }))
   }, [])
 
   const contextValue = {
     selectList,
     selectedList,
-    initList,
-    addSelected: (item) => {
-      const newSelectList = selectList.filter(
-        (selectItem) => selectItem.key !== item.key
-      )
-      setState({
-        selectList: newSelectList,
-        selectedList: [...selectedList, item],
-      })
-    },
-    removeSelected: (item) => {
-      const newSelectedList = selectedList.filter(
-        (selectedItem) => selectedItem.key !== item.key
-      )
-      setState({
-        selectList: [...selectList, item],
-        selectedList: newSelectedList,
-      })
-    },
+    categories,
+    initialize,
+    addSelected,
+    removeSelected,
   }
 
   return (
