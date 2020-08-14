@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/statebait/react-awesome-selector/compare/v0.1.5...v0.3.1) (2020-08-14)
+
+### Refactor
+
+- cleanup styles file ([04d7c7e](https://github.com/statebait/react-awesome-selector/commit/04d7c7e4f35d9a553c1346bbcc4a26ee58a8b538))
+- useContext hook usage ([0c88501](https://github.com/statebait/react-awesome-selector/commit/0c88501d9897bc9960d122e583ef37dfe869c373))
+
 ## [0.3.0](https://github.com/statebait/react-awesome-selector/compare/v0.1.5...v0.3.0) (2020-08-14)
 
 ### Performance
