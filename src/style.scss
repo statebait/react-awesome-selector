@@ -1,101 +1,103 @@
-// Utility classes
+.react-awesome-selector {
+  // Utility classes
 
-.react-awesome-selector-rotate {
-  transform: rotate(90deg);
-}
-
-.react-awesome-selector-flex {
-  display: flex;
-}
-
-.react-awesome-selector-icon {
-  margin-right: 5%;
-  margin-left: 5%;
-  width: 0.5rem;
-  height: auto;
-}
-
-// Main wrapper
-
-.react-awesome-selector-wrapper {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-// Category
-
-.react-awesome-selector-category {
-  width: 300px;
-  padding: 5px;
-  margin: 5px;
-  -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
-}
-
-.react-awesome-selector-category-title {
-  cursor: pointer;
-  img {
-    @extend .react-awesome-selector-icon;
+  &-rotate {
+    transform: rotate(90deg);
   }
-  span {
+
+  &-flex {
+    display: flex;
+  }
+
+  &-icon {
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 0.5rem;
+    height: auto;
+  }
+
+  // Main wrapper
+
+  &-wrapper {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+      'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  // Category
+
+  &-category {
+    width: 300px;
+    padding: 5px;
+    margin: 5px;
+    -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  &-category-title {
+    cursor: pointer;
+    img {
+      @extend .react-awesome-selector-icon;
+    }
+    span {
+      font-size: 22px;
+    }
+  }
+
+  &-category-children {
+    margin-left: 7%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  // Selected list
+
+  &-selected-list {
+    width: 300px;
+    padding: 15px;
+    margin: 5px;
+    -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  &-selected-list-title {
     font-size: 22px;
   }
-}
 
-.react-awesome-selector-category-children {
-  margin-left: 7%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+  // Item
 
-// Selected list
+  &-item {
+    font-size: 18px;
+    padding: 5px;
+  }
 
-.react-awesome-selector-selected-list {
-  width: 300px;
-  padding: 15px;
-  margin: 5px;
-  -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
-}
+  &-item-icon {
+    @extend .react-awesome-selector-icon;
+    cursor: pointer;
+  }
 
-.react-awesome-selector-selected-list-title {
-  font-size: 22px;
-}
+  // Button
 
-// Item
-
-.react-awesome-selector-item {
-  font-size: 18px;
-  padding: 5px;
-}
-
-.react-awesome-selector-item-icon {
-  @extend .react-awesome-selector-icon;
-  cursor: pointer;
-}
-
-// Button
-
-.react-awesome-selector-submit-button {
-  padding: 10px;
-  font-weight: bold;
-  width: 80px;
-  color: white;
-  margin-top: 15px;
-  background-color: black;
-  border: 0;
-  border-radius: 25px;
-  cursor: pointer;
-  -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
-  &:hover {
-    color: black;
-    background-color: white;
+  &-submit-button {
+    padding: 10px;
+    font-weight: bold;
+    width: 80px;
+    color: white;
+    margin-top: 15px;
+    background-color: black;
+    border: 0;
+    border-radius: 25px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.2);
+    &:hover {
+      color: black;
+      background-color: white;
+    }
   }
 }

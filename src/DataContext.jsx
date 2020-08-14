@@ -54,5 +54,3 @@ export const DataProvider = (props) => {
     </DataContext.Provider>
   )
 }
-
-DataProvider.whyDidYouRender = true
