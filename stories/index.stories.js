@@ -31,8 +31,5 @@ export const WithCustomTitle = () => (
 )
 
 export const WithCustomGetSelectedFunction = () => (
-  <Selector
-    data={data}
-    getSelected={(values) => alert(JSON.stringify(values))}
-  />
+  <Selector data={data} onChange={(values) => alert(JSON.stringify(values))} />
 )

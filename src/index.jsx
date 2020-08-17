@@ -6,8 +6,8 @@ import PropTypes from 'prop-types'
 import './style.scss'
 
 const SelectorChild = (props) => {
-  const { initialize, ...context } = React.useContext(DataContext)
-  const { data, selectedTitle, getSelected } = props
+  const { initialize, selectedList } = React.useContext(DataContext)
+  const { data, selectedTitle, onChange } = props
 
   // Sanitizes data
   React.useEffect(() => {
@@ -22,20 +22,15 @@ const SelectorChild = (props) => {
     initialize({ selectList: items, categories })
   }, [data, initialize])
 
-  const handleSubmit = () => getSelected(context.selectedList)
+  // onChange effect
+  React.useEffect(() => {
+    onChange(selectedList)
+  }, [onChange, selectedList])
 
   return (
     <>
-      <div className="react-awesome-selector-flex">
-        <SelectList />
-        <SelectedList title={selectedTitle} />
-      </div>
-      <button
-        className="react-awesome-selector-submit-button"
-        onClick={handleSubmit}
-      >
-        Submit
-      </button>
+      <SelectList />
+      <SelectedList title={selectedTitle} />
     </>
   )
 }
@@ -47,7 +42,7 @@ function Selector(props) {
         <SelectorChild
           selectedTitle={props.selectedTitle}
           data={props.data}
-          getSelected={props.getSelected}
+          onChange={props.onChange}
         />
       </div>
     </DataProvider>
@@ -64,15 +59,15 @@ Selector.propTypes = {
    */
   selectedTitle: PropTypes.string,
   /**
-   * Function for getting the values of the selected values
+   * Function for getting the selected values when anything changes
    */
-  getSelected: PropTypes.func,
+  onChange: PropTypes.func,
 }
 
 Selector.defaultProps = {
   data: [],
   selectedTitle: 'Selected',
-  getSelected: function (values) {
+  onChange: function (values) {
     console.log('Selected Values: ', values)
   },
 }
