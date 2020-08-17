@@ -6,7 +6,7 @@ import { DataContext } from './DataContext.jsx'
 function SelectList() {
   const context = React.useContext(DataContext)
   return (
-    <div>
+    <div className="react-awesome-selector-select-list">
       {context.categories.map((category, categoryIndex) => {
         return (
           <Category key={categoryIndex} title={category}>
