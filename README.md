@@ -31,7 +31,7 @@ import 'react-awesome-selector/dist/style.css'
 const data = [
   { category: 'calculate', name: 'card', value: 89519 },
   { category: 'calculate', name: 'array', value: 49024 },
-  { category: 'lavender', name: 'Grocery', value: 90170 },
+  { category: 'lavender', name: 'grocery', value: 90170 },
   { category: 'lavender', name: 'input', value: 56963 },
 ]
 
@@ -39,8 +39,9 @@ export default function Main() {
   return (
     <Selector
       data={data}
+      selectTitle="Items"
       selectedTitle="Cart"
-      getSelected={(values) => alert(JSON.stringify(values))}
+      onChange={(values) => console.log(values)}
     />
   )
 }
@@ -55,21 +56,24 @@ Selector.propTypes = {
    */
   data: PropTypes.array,
   /**
+   * Title for the select list
+   */
+  selectTitle: PropTypes.string,
+  /**
    * Title for the selected list
    */
   selectedTitle: PropTypes.string,
   /**
-   * Function for getting the values of the selected values
+   * Function for getting the selected values when anything changes
    */
-  getSelected: PropTypes.func,
+  onChange: PropTypes.func,
 }
 
 Selector.defaultProps = {
   data: [],
-  selectedTitle: 'Selected',
-  getSelected: function (values) {
-    console.log('Selected Values: ', values)
-  },
+  selectTitle: '',
+  selectedTitle: '',
+  onChange: () => {},
 }
 ```
 
