@@ -3,10 +3,14 @@ import Category from './Category.jsx'
 import Item from './Item.jsx'
 import { DataContext } from './DataContext.jsx'
 
-function SelectList() {
+function SelectList(props) {
   const context = React.useContext(DataContext)
+
   return (
     <div className="react-awesome-selector-select-list">
+      <div className="react-awesome-selector-select-list-title">
+        {props.title}
+      </div>
       {context.categories.map((category, categoryIndex) => {
         return (
           <Category key={categoryIndex} title={category}>

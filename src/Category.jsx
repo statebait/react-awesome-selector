@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Category = (props) => {
   const [open, setOpen] = React.useState(false)
@@ -26,6 +27,10 @@ const Category = (props) => {
       )}
     </div>
   )
+}
+
+Category.propTypes = {
+  title: PropTypes.string.isRequired,
 }
 
 export default Category

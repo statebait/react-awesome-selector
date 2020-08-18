@@ -24,12 +24,15 @@ const data = [
   { category: 'Home Loan Account', name: 'HTTP', value: 74444 },
 ]
 
-export const WithDataOnly = () => <Selector data={data} />
-
-export const WithCustomTitle = () => (
-  <Selector data={data} selectedTitle="Cart" />
+export const WithDataOnly = () => (
+  <Selector data={data} onChange={(values) => console.log(values)} />
 )
 
-export const WithCustomGetSelectedFunction = () => (
-  <Selector data={data} onChange={(values) => alert(JSON.stringify(values))} />
+export const WithCustomTitle = () => (
+  <Selector
+    data={data}
+    selectTitle="Items"
+    selectedTitle="Cart"
+    onChange={(values) => console.log(values)}
+  />
 )
