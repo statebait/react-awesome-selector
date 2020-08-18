@@ -7,7 +7,7 @@ import './style.scss'
 
 const SelectorChild = (props) => {
   const { initialize, selectedList } = React.useContext(DataContext)
-  const { data, selectedTitle, onChange } = props
+  const { data, selectedTitle, selectTitle, onChange } = props
 
   // Sanitizes data
   React.useEffect(() => {
@@ -29,7 +29,7 @@ const SelectorChild = (props) => {
 
   return (
     <>
-      <SelectList />
+      <SelectList title={selectTitle} />
       <SelectedList title={selectedTitle} />
     </>
   )
@@ -39,11 +39,7 @@ function Selector(props) {
   return (
     <DataProvider>
       <div className="react-awesome-selector-wrapper">
-        <SelectorChild
-          selectedTitle={props.selectedTitle}
-          data={props.data}
-          onChange={props.onChange}
-        />
+        <SelectorChild {...props} />
       </div>
     </DataProvider>
   )
@@ -54,6 +50,10 @@ Selector.propTypes = {
    * Data input for the selector
    */
   data: PropTypes.array,
+  /**
+   * Title for the select list
+   */
+  selectTitle: PropTypes.string,
   /**
    * Title for the selected list
    */
@@ -66,10 +66,9 @@ Selector.propTypes = {
 
 Selector.defaultProps = {
   data: [],
-  selectedTitle: 'Selected',
-  onChange: function (values) {
-    console.log('Selected Values: ', values)
-  },
+  selectTitle: '',
+  selectedTitle: '',
+  onChange: () => {},
 }
 
 export default Selector

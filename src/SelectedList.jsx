@@ -7,17 +7,19 @@ const SelectedList = (props) => {
 
   return (
     <div className="react-awesome-selector-selected-list">
-      <span className="react-awesome-selector-selected-list-title">
+      <div className="react-awesome-selector-selected-list-title">
         {props.title}
-      </span>
-      {context.selectedList.map((item) => {
-        const handleIconClick = () => context.removeSelected(item)
-        return (
-          <Item key={item.key} selected onIconClick={handleIconClick}>
-            {item.name}
-          </Item>
-        )
-      })}
+      </div>
+      <div className="react-awesome-selector-selected-list-items">
+        {context.selectedList.map((item) => {
+          const handleIconClick = () => context.removeSelected(item)
+          return (
+            <Item key={item.key} selected onIconClick={handleIconClick}>
+              {item.name}
+            </Item>
+          )
+        })}
+      </div>
     </div>
   )
 }
