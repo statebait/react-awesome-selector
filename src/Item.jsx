@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function Item(props) {
   const handleClick = () => props.onIconClick()
@@ -18,6 +19,15 @@ function Item(props) {
       />
     </div>
   )
+}
+
+Item.propTypes = {
+  onIconClick: PropTypes.func,
+  selected: PropTypes.bool,
+}
+
+Item.defaultProps = {
+  onIconClick: () => {},
 }
 
 export default Item

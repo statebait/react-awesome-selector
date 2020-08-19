@@ -7,20 +7,30 @@ import './style.scss'
 
 const SelectorChild = (props) => {
   const { initialize, selectedList } = React.useContext(DataContext)
-  const { data, selectedTitle, selectTitle, onChange } = props
+  const { data, categorize, selectedTitle, selectTitle, onChange } = props
 
   // Sanitizes data
   React.useEffect(() => {
+    // Check if name and value properties exist on all items in the data array
+    if (!data.every((item) => item.name && item.value)) {
+      throw new Error('name or value missing from at least one item')
+    }
+    // Check if the category property exist on all items in the data array if categorize is set to true
+    if (categorize) {
+      if (!data.every((item) => item.category)) {
+        throw new Error('category missing from at least one item')
+      }
+    }
     let items = []
     let categories = []
     for (let i = 0; i < data.length; i++) {
-      if (!categories.includes(data[i].category)) {
+      if (categorize && !categories.includes(data[i].category)) {
         categories.push(data[i].category)
       }
       items.push({ ...data[i], key: i })
     }
     initialize({ selectList: items, categories })
-  }, [data, initialize])
+  }, [data, initialize, categorize])
 
   // onChange effect
   React.useEffect(() => {
@@ -29,7 +39,7 @@ const SelectorChild = (props) => {
 
   return (
     <>
-      <SelectList title={selectTitle} />
+      <SelectList categorize={categorize} title={selectTitle} />
       <SelectedList title={selectedTitle} />
     </>
   )
@@ -51,6 +61,10 @@ Selector.propTypes = {
    */
   data: PropTypes.array,
   /**
+   * Whether to display categories in the select list
+   */
+  categorize: PropTypes.bool,
+  /**
    * Title for the select list
    */
   selectTitle: PropTypes.string,
@@ -66,6 +80,7 @@ Selector.propTypes = {
 
 Selector.defaultProps = {
   data: [],
+  categorize: false,
   selectTitle: '',
   selectedTitle: '',
   onChange: () => {},
