@@ -29,6 +29,13 @@ import Selector from 'react-awesome-selector'
 import 'react-awesome-selector/dist/style.css'
 
 const data = [
+  { name: 'card', value: 89519 },
+  { name: 'array', value: 49024 },
+  { name: 'grocery', value: 90170 },
+  { name: 'input', value: 56963 },
+]
+
+const withCategoryData = [
   { category: 'calculate', name: 'card', value: 89519 },
   { category: 'calculate', name: 'array', value: 49024 },
   { category: 'lavender', name: 'grocery', value: 90170 },
@@ -37,17 +44,26 @@ const data = [
 
 export default function Main() {
   return (
-    <Selector
-      data={data}
-      selectTitle="Items"
-      selectedTitle="Cart"
-      onChange={(values) => console.log(values)}
-    />
+    <div>
+      <Selector
+        data={data}
+        selectTitle="Items"
+        selectedTitle="Cart"
+        onChange={(values) => console.log(values)}
+      />
+      <Selector
+        data={withCategoryData}
+        categorize
+        selectTitle="Items"
+        selectedTitle="Cart"
+        onChange={(values) => console.log(values)}
+      />
+    </div>
   )
 }
 ```
 
-Props:
+### Props:
 
 ```js
 Selector.propTypes = {
@@ -55,6 +71,10 @@ Selector.propTypes = {
    * Data input for the selector
    */
   data: PropTypes.array,
+  /**
+   * Whether to display categories in the select list
+   */
+  categorize: PropTypes.bool,
   /**
    * Title for the select list
    */
@@ -71,9 +91,66 @@ Selector.propTypes = {
 
 Selector.defaultProps = {
   data: [],
+  categorize: false,
   selectTitle: '',
   selectedTitle: '',
   onChange: () => {},
+}
+```
+
+### Styling
+
+Use the default styles by importing:
+
+```js
+import 'react-awesome-selector/dist/style.css'
+```
+
+These classes are available for use:
+
+```css
+// Main wrapper
+
+.react-awesome-selector-wrapper {
+}
+
+// Category
+
+.react-awesome-selector-category {
+}
+
+.react-awesome-selector-category-title {
+}
+
+.react-awesome-selector-category-children {
+}
+
+// Selected & Select list
+
+.react-awesome-selector-selected-list {
+}
+
+.react-awesome-selector-select-list {
+}
+
+.react-awesome-selector-select-list {
+}
+
+.react-awesome-selector-selected-list-title {
+}
+
+.react-awesome-selector-select-list-title {
+}
+
+.react-awesome-selector-selected-list-items {
+}
+
+// Item
+
+.react-awesome-selector-item {
+}
+
+.react-awesome-selector-item-icon {
 }
 ```
 
