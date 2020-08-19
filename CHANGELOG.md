@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/statebait/react-awesome-selector/compare/v0.1.5...v1.0.0) (2020-08-19)
+
+### ⚠ BREAKING CHANGES
+
+- replace getSelected prop with onChange
+
+### Features
+
+- categories is now optional ([326c9c8](https://github.com/statebait/react-awesome-selector/commit/326c9c87fad366f7de0b5e2621dd28377ff64897))
+- replace getSelected prop with onChange ([bfa4b66](https://github.com/statebait/react-awesome-selector/commit/bfa4b66976381637707f70124ef4ccbca857e852))
+
+### Documentation
+
+- update README ([9f8139a](https://github.com/statebait/react-awesome-selector/commit/9f8139a089d64794a45abf33e73a9c1bb243a151))
+- updated readme with new props ([e2d67f7](https://github.com/statebait/react-awesome-selector/commit/e2d67f7326710fcff5f2a0dc2eb3617c21791dc8))
+
 ### [0.3.1](https://github.com/statebait/react-awesome-selector/compare/v0.1.5...v0.3.1) (2020-08-14)
 
 ### Refactor
