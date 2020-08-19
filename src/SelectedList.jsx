@@ -1,15 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Item from './Item.jsx'
 import { DataContext } from './DataContext.jsx'
 
 const SelectedList = (props) => {
   const context = React.useContext(DataContext)
+  const { title } = props
 
   return (
     <div className="react-awesome-selector-selected-list">
-      <div className="react-awesome-selector-selected-list-title">
-        {props.title}
-      </div>
+      {title && (
+        <div className="react-awesome-selector-selected-list-title">
+          {title}
+        </div>
+      )}
       <div className="react-awesome-selector-selected-list-items">
         {context.selectedList.map((item) => {
           const handleIconClick = () => context.removeSelected(item)
@@ -22,6 +26,10 @@ const SelectedList = (props) => {
       </div>
     </div>
   )
+}
+
+SelectedList.propTypes = {
+  title: PropTypes.string,
 }
 
 export default SelectedList
