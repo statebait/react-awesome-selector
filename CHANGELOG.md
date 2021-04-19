@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/statebait/react-awesome-selector/compare/v1.1.0...v2.0.0) (2021-04-19)
+
+- upgraded all deps ([9bb6c5c](https://github.com/statebait/react-awesome-selector/commit/9bb6c5c4d4fef12ebf0cf1bac98076a6db74c1f4))
+
 ## [1.1.0](https://github.com/statebait/react-awesome-selector/compare/v1.0.1...v1.1.0) (2020-12-01)
 
 - upgraded all deps including webpack 5 ([9e21451](https://github.com/statebait/react-awesome-selector/commit/9e21451abf2c5a91fca8210ecf3b6065fdb29a9e))
