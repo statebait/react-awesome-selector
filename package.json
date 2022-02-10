@@ -52,7 +52,7 @@
     "eslint-plugin-react-hooks": "^4.0.4",
     "husky": "^7.0.0",
     "mini-css-extract-plugin": "^2.0.0",
-    "node-sass": "^6.0.0",
+    "node-sass": "^7.0.0",
     "path": "^0.12.7",
     "prettier": "^2.0.5",
     "pretty-quick": "^3.0.2",
